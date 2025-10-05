@@ -1,0 +1,696 @@
+{
+	"id": "584f4f61-ff24-4089-9225-209c3c575541",
+	"name": "DemoShopping",
+	"timestamp": "2025-10-05T21:17:57.830Z",
+	"collection_id": "48972882-353757e9-3acf-4523-a27f-6568419f501a",
+	"folder_id": 0,
+	"environment_id": "48972882-0d09ec7d-4a7a-4b0e-aebc-4efa4bad5e82",
+	"totalPass": 47,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-10-05T21:17:52.679Z",
+	"totalFail": 7,
+	"results": [
+		{
+			"id": "6ba22486-0c7a-45fd-b159-d152cdbe2bb7",
+			"name": "200 OK - Get a product list",
+			"url": "https://qa.demoshopping.ru/products",
+			"time": 975,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify status code is 200": true,
+				"Check that response time is less than 1500ms": true,
+				"Check that response body is an array": true,
+				"Verify products array is not empty": true,
+				"Check if each product has all required fields": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check that response time is less than 1500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check that response body is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify products array is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if each product has all required fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				975
+			],
+			"allTests": [
+				{
+					"Verify status code is 200": true,
+					"Check that response time is less than 1500ms": true,
+					"Check that response body is an array": true,
+					"Verify products array is not empty": true,
+					"Check if each product has all required fields": true
+				}
+			]
+		},
+		{
+			"id": "8b8f3a99-e75c-4dbc-8630-66ed66133469",
+			"name": "200 OK- Add a new product",
+			"url": "https://qa.demoshopping.ru/add-product",
+			"time": 276,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify status code is 200": true,
+				"Check if request body contains all required fields": true,
+				"Check if request body fields have correct data types": true,
+				"Confirm success message matches documentation": false,
+				"Save product ID from response": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if request body contains all required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if request body fields have correct data types": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Confirm success message matches documentation": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Save product ID from response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				276
+			],
+			"allTests": [
+				{
+					"Verify status code is 200": true,
+					"Check if request body contains all required fields": true,
+					"Check if request body fields have correct data types": true,
+					"Confirm success message matches documentation": false,
+					"Save product ID from response": true
+				}
+			]
+		},
+		{
+			"id": "a5711447-f9fd-4cf4-942f-19397056506d",
+			"name": "400 BR- Add a new product without a name",
+			"url": "https://qa.demoshopping.ru/add-product",
+			"time": 124,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Verify statuscode is 400": true,
+				"No product ID in error response": true,
+				"Confirm error message matches documentation": false
+			},
+			"testPassFailCounts": {
+				"Verify statuscode is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No product ID in error response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Confirm error message matches documentation": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				124
+			],
+			"allTests": [
+				{
+					"Verify statuscode is 400": true,
+					"No product ID in error response": true,
+					"Confirm error message matches documentation": false
+				}
+			]
+		},
+		{
+			"id": "ff18e56e-6c70-4ce3-9cb3-60acf72fb9de",
+			"name": "200 OK - Search products by existing id",
+			"url": "https://qa.demoshopping.ru/products/id/22531",
+			"time": 123,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify status code is 200": true,
+				"Check if product has all required fields": true,
+				"Verify that returned product_id matches requested ID": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if product has all required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify that returned product_id matches requested ID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"Verify status code is 200": true,
+					"Check if product has all required fields": true,
+					"Verify that returned product_id matches requested ID": true
+				}
+			]
+		},
+		{
+			"id": "a0dce666-3f3b-45c1-9de6-3ef4f4388483",
+			"name": "200 OK - Full product update by id",
+			"url": "https://qa.demoshopping.ru/products/id/22531",
+			"time": 201,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify status code is 200": true,
+				"Check if response text matches documentation": false,
+				"Confirm request body has all required fields": true,
+				"Check all request body fields have correct data types": true,
+				"Check if equired string fields are not empty": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if response text matches documentation": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Confirm request body has all required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check all request body fields have correct data types": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if equired string fields are not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				201
+			],
+			"allTests": [
+				{
+					"Verify status code is 200": true,
+					"Check if response text matches documentation": false,
+					"Confirm request body has all required fields": true,
+					"Check all request body fields have correct data types": true,
+					"Check if equired string fields are not empty": true
+				}
+			]
+		},
+		{
+			"id": "eb042f35-c148-41eb-80b2-f019685a1b3f",
+			"name": "400 BR - Full product update with wrong type for FreeShipping variable",
+			"url": "https://qa.demoshopping.ru/products/id/22531",
+			"time": 191,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Verify status code is 400": true,
+				"Confirm freeShipping has invalid type in request": true,
+				"Check if other fields have valid types": true,
+				"Confirm error message matches documentation": false
+			},
+			"testPassFailCounts": {
+				"Verify status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Confirm freeShipping has invalid type in request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if other fields have valid types": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Confirm error message matches documentation": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				191
+			],
+			"allTests": [
+				{
+					"Verify status code is 400": true,
+					"Confirm freeShipping has invalid type in request": true,
+					"Check if other fields have valid types": true,
+					"Confirm error message matches documentation": false
+				}
+			]
+		},
+		{
+			"id": "08f029e0-2ed6-4439-97ed-99070b043822",
+			"name": "200 OK - Partial product update by id",
+			"url": "https://qa.demoshopping.ru/products/id/22531",
+			"time": 196,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify status code is 200": true,
+				"Confirm response text matches expected success message": false,
+				"Check if at least one field is present in request": true,
+				"Verify sent fields have correct data types": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Confirm response text matches expected success message": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Check if at least one field is present in request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify sent fields have correct data types": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				196
+			],
+			"allTests": [
+				{
+					"Verify status code is 200": true,
+					"Confirm response text matches expected success message": false,
+					"Check if at least one field is present in request": true,
+					"Verify sent fields have correct data types": true
+				}
+			]
+		},
+		{
+			"id": "2663c14f-010e-4ea7-b0da-50b621b9caba",
+			"name": "400 BR- Partial product update by id with invalid price type",
+			"url": "https://qa.demoshopping.ru/products/id/22531",
+			"time": 205,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify status code is 400": false,
+				"Verify error message matches expected text": false,
+				"Confirm price has invalid string type in request": true,
+				"Check if other fields have valid types": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 400": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Verify error message matches expected text": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Confirm price has invalid string type in request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if other fields have valid types": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				205
+			],
+			"allTests": [
+				{
+					"Verify status code is 400": false,
+					"Verify error message matches expected text": false,
+					"Confirm price has invalid string type in request": true,
+					"Check if other fields have valid types": true
+				}
+			]
+		},
+		{
+			"id": "85a75053-5730-49d2-a2dd-dd964e675451",
+			"name": "200 OK - Deleting products by id",
+			"url": "https://qa.demoshopping.ru/products/id/22531",
+			"time": 310,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify status code is 200": true,
+				"Check if response text matches expected success message": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if response text matches expected success message": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				310
+			],
+			"allTests": [
+				{
+					"Verify status code is 200": true,
+					"Check if response text matches expected success message": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "35fa4149-9e06-410a-b1c1-84bf0bb00b94",
+			"name": "403 Forbidden - Deleting protected products by id",
+			"url": "https://qa.demoshopping.ru/products/id/2",
+			"time": 110,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Verify status code is 403": true,
+				"Check if response text matches expected success message": true,
+				"Product ID is in protected range (1-50)": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 403": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if response text matches expected success message": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Product ID is in protected range (1-50)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				110
+			],
+			"allTests": [
+				{
+					"Verify status code is 403": true,
+					"Check if response text matches expected success message": true,
+					"Product ID is in protected range (1-50)": true
+				}
+			]
+		},
+		{
+			"id": "572cc7ee-10fd-4a73-8040-ddfa63c30451",
+			"name": "404 NF - Search products by non-existend id",
+			"url": "https://qa.demoshopping.ru/products/id/9999",
+			"time": 127,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Verify status code is 404": true,
+				"Check if error message matches expected text": true,
+				"Check if it's not a server error": true,
+				"Error response time is below 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if error message matches expected text": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if it's not a server error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response time is below 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				127
+			],
+			"allTests": [
+				{
+					"Verify status code is 404": true,
+					"Check if error message matches expected text": true,
+					"Check if it's not a server error": true,
+					"Error response time is below 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "173cf08b-0473-414e-90a6-7a2fe1c07380",
+			"name": "404 NF - Deleting products by id with non-existing id",
+			"url": "https://qa.demoshopping.ru/products/id/9999",
+			"time": 110,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Verify status code is 404": true,
+				"Confirm error message matches expected text": true,
+				"Check if URL contains product ID": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Confirm error message matches expected text": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if URL contains product ID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				110
+			],
+			"allTests": [
+				{
+					"Verify status code is 404": true,
+					"Confirm error message matches expected text": true,
+					"Check if URL contains product ID": true
+				}
+			]
+		},
+		{
+			"id": "6274bd13-0b4c-4b64-ac2e-ab92b391f542",
+			"name": "404 NF - Full product update by non-existend id",
+			"url": "https://qa.demoshopping.ru/products/id/9999",
+			"time": 114,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Verify status code is 404": true,
+				"Error message matches expected text": true,
+				"Verify request body is valid": true,
+				"Confirm URL contains product ID": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message matches expected text": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify request body is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Confirm URL contains product ID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				114
+			],
+			"allTests": [
+				{
+					"Verify status code is 404": true,
+					"Error message matches expected text": true,
+					"Verify request body is valid": true,
+					"Confirm URL contains product ID": true
+				}
+			]
+		},
+		{
+			"id": "43eb423c-7151-4ed1-b1bf-cd49119ed111",
+			"name": "404 NF - Partial product update by non-existend id",
+			"url": "https://qa.demoshopping.ru/products/id/9999",
+			"time": 113,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Verify status code is 404": true,
+				"Error message matches expected text": true,
+				"Confirm URL contains product ID": true,
+				"Check if request body has valid data": true
+			},
+			"testPassFailCounts": {
+				"Verify status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message matches expected text": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Confirm URL contains product ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if request body has valid data": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				113
+			],
+			"allTests": [
+				{
+					"Verify status code is 404": true,
+					"Error message matches expected text": true,
+					"Confirm URL contains product ID": true,
+					"Check if request body has valid data": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3175,
+	"collection": {
+		"requests": [
+			{
+				"id": "6ba22486-0c7a-45fd-b159-d152cdbe2bb7",
+				"method": "GET"
+			},
+			{
+				"id": "8b8f3a99-e75c-4dbc-8630-66ed66133469",
+				"method": "POST"
+			},
+			{
+				"id": "a5711447-f9fd-4cf4-942f-19397056506d",
+				"method": "POST"
+			},
+			{
+				"id": "ff18e56e-6c70-4ce3-9cb3-60acf72fb9de",
+				"method": "GET"
+			},
+			{
+				"id": "a0dce666-3f3b-45c1-9de6-3ef4f4388483",
+				"method": "PUT"
+			},
+			{
+				"id": "eb042f35-c148-41eb-80b2-f019685a1b3f",
+				"method": "PUT"
+			},
+			{
+				"id": "08f029e0-2ed6-4439-97ed-99070b043822",
+				"method": "PATCH"
+			},
+			{
+				"id": "2663c14f-010e-4ea7-b0da-50b621b9caba",
+				"method": "PATCH"
+			},
+			{
+				"id": "85a75053-5730-49d2-a2dd-dd964e675451",
+				"method": "DELETE"
+			},
+			{
+				"id": "35fa4149-9e06-410a-b1c1-84bf0bb00b94",
+				"method": "DELETE"
+			},
+			{
+				"id": "572cc7ee-10fd-4a73-8040-ddfa63c30451",
+				"method": "GET"
+			},
+			{
+				"id": "173cf08b-0473-414e-90a6-7a2fe1c07380",
+				"method": "DELETE"
+			},
+			{
+				"id": "6274bd13-0b4c-4b64-ac2e-ab92b391f542",
+				"method": "PUT"
+			},
+			{
+				"id": "43eb423c-7151-4ed1-b1bf-cd49119ed111",
+				"method": "PATCH"
+			}
+		]
+	}
+}
